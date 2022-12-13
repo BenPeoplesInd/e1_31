@@ -34,7 +34,7 @@ impl e1_31_pkt {
             values: Vec::new() }
     }
 
-    pub fn deserialize(data : Vec<u8>) -> Option<e1_31_pkt> {
+    pub fn deserialize(data : &Vec<u8>) -> Option<e1_31_pkt> {
         let mut rv = e1_31_pkt::new();
         let mut cursor = Cursor::new(data);
 
