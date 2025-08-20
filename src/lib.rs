@@ -164,7 +164,7 @@ impl e1_31_pkt {
 
         cursor.write_u16::<BigEndian>(self.universe).unwrap();
 
-        cursor.write_u16::<BigEndian>((0x07_u16 << 24) + self.property_value_count + 10).unwrap();
+        cursor.write_u16::<BigEndian>((0x7000_u16) + self.property_value_count + 10).unwrap();
 
         cursor.write_u8(0x02).unwrap();
         cursor.write_u8(0xa1).unwrap();
