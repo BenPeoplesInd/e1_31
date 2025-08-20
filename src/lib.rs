@@ -130,11 +130,11 @@ impl e1_31_pkt {
         cursor.write_u16::<BigEndian>(0x0010).unwrap();
         cursor.write_u16::<BigEndian>(0x0000).unwrap();
         cursor.write_all(&HEADER).unwrap();
-        cursor.write_u16::<BigEndian>((0x07_u16 << 12) + self.property_value_count + 109).unwrap();
+        cursor.write_u16::<BigEndian>((0x7000_u16) + self.property_value_count + 109).unwrap();
         cursor.write_u32::<BigEndian>(0x04).unwrap();
 
         cursor.write_all(&self.cid).unwrap();
-        cursor.write_u16::<BigEndian>((0x07_u16 << 12) + self.property_value_count + 87).unwrap();
+        cursor.write_u16::<BigEndian>((0x7000_u16) + self.property_value_count + 87).unwrap();
 
         cursor.write_u32::<BigEndian>(0x02);
 
